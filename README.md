@@ -27,3 +27,13 @@ File Management:
 * The method of providing users with an interface to manage their files, folders and various other collections of data.
 * pple File System The file system can be used on devices with relatively small or large amounts of storage. 
 * It uses 64-bit inode numbers, and allows for more secure storage. The APFS code, uses the TRIM command, for better space management and performance as compared to HFS+. It increases read-write speeds on iOS and macOS, as well as space on iOS devices, due to the way APFS calculates available data
+
+## Algorithm Description
+Process Management
+* A new process is inserted at the end (tail) of the top-level FIFO queue.
+* At some stage the process reaches the head of the queue and is assigned the CPU.
+* If the process is completed within the time slice of the given queue, it leaves the system.
+* If a process blocks for I/O, it is given one more iteration at the same level queue. This can be done until a process reaches it's I/O occupation limit. It allows I/O bound processes to be favoured by the scheduler.
+* If the process uses all the quantum time, it is pre-empted and inserted at the end of the next lower level queue. This next lower level queue will have a time quantum which is more than that of the previous higher level queue.
+* This scheme will continue until the process completes or it reaches the base level queue. At the base level queue the processes circulate in Round Robin fashion until they complete and leave the system. 
+
