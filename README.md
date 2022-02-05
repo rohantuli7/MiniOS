@@ -1,8 +1,6 @@
 # MiniOS
 
-Problem Statement: 
-
-To write an application which replicates various functionalities of MacOS X, such as Process, Memory, I/O and File Management, as well as combine them into a single menu driven program. 
+**To write an application which replicates various functionalities of MacOS X, such as Process, Memory, I/O and File Management, as well as combine them into a single menu driven program.**
 
 
 OS FUNCTIONALITIES
